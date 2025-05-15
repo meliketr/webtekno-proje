@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hakkımda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Hoş geldin baloncuğu -->
+  <div class="welcome-bubble" id="welcomeBubble" style="display:none;">
+    Hoş geldin! 🎉
+  </div> 
+
+  <h1 style="text-align:center; margin-top: 100px;">Hakkımda Sayfası</h1>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('welcome') === '1') {
+        const bubble = document.getElementById('welcomeBubble'); // düzeltilmiş id
+        bubble.style.display = 'block';
+
+        setTimeout(() => {
+          bubble.style.display = 'none';
+        }, 4000);
+      }
+    });
+  </script>
+</body>
+</html>

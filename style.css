@@ -1,0 +1,101 @@
+/* Sayfa genel görünüm */
+body {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login kutusu */
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Başlık */
+.login-container h3 {
+    font-weight: bold;
+    color: #ff6f61;
+}
+
+/* Input kutuları */
+.form-control {
+    border-radius: 10px;
+    border: 2px solid #ffd6c0;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #ff6f61;
+    box-shadow: none;
+}
+
+/* Giriş butonu */
+button[type="submit"] {
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e0554f;
+}
+
+/* Geçersiz alan bildirimi */
+.invalid-feedback {
+    font-size: 0.85rem;
+    color: #d9534f;
+}
+
+/* Basit fade animasyonu */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hoş geldin mesajı baloncuğu */
+.welcome-bubble {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff6f61;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.6);
+  font-weight: bold;
+  font-size: 1.1rem;
+  animation: slideInBubble 0.8s ease forwards;
+  cursor: default;
+  user-select: none;
+  z-index: 1000;
+}
+
+@keyframes slideInBubble {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
