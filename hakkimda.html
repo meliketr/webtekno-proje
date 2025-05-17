@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hakkımda</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="cssDosyalari/styleHakkimda.css" />
 </head>
 <body>
 
@@ -12,10 +12,33 @@
   <div class="welcome-bubble" id="welcomeBubble" style="display:none;">
     Hoş geldin! 🎉
   </div> 
+  <div class="centered-content">
+    <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="hakkimda.html"><span class="sun">☀</span> Hakkımda</a></li>
+      <li><a href="ozgecmis.html">Özgeçmiş</a></li>
+      <li><a href="sehrim.html">Şehrim</a></li>
+      <li><a href="mirasimiz.html">Mirasımız</a></li>
+      <li><a href="ilgiAlanlarim.html">İlgi Alanlarım</a></li>
+    </ul>
+  </nav>
 
-  <h1 style="text-align:center; margin-top: 100px;">Hakkımda Sayfası oluşturuldu</h1>
+      <h1 style="text-align:center; margin-top: 100px;">Hakkımda Sayfası oluşturuldu</h1>
 
-  <script>
+    <p>Bu kısım yarı saydam ortadır.</p>
+
+
+
+
+  </div>
+
+  
+</body>
+</html>
+
+
+<script>
     window.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
       if (params.get('welcome') === '1') {
@@ -28,5 +51,3 @@
       }
     });
   </script>
-</body>
-</html>

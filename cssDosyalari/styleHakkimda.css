@@ -1,0 +1,63 @@
+body {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.centered-content {
+    height: 100%;
+  width: 60%;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.7); /* Yarı opak merkez */
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background-color: #f3ebd0;
+  border-bottom: 1px solid #050303;
+  padding: 12px 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 17px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #a33d0a;
+}
+
+.sun {
+  color: #f39c12; /* güneş rengi (turuncumsu sarı) */
+  margin-right: 5px;
+  font-size: 18px;
+}
+
