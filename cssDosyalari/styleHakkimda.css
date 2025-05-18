@@ -1,62 +1,107 @@
 body {
-    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    background: linear-gradient(135deg, #f8b9e3 0%, #e07658 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh; /* sayfa boyu kadar uzasın */
+    background-attachment: fixed; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    padding-top: 60px; /*NAVBAR YÜKSEKLİĞİ KADAR BOŞLUK */
+
+
 }
 
 .centered-content {
-    height: 100%;
-  width: 60%;
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto; /* Ortalamak için */
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.7); /* Yarı opak merkez */
+  background-color: rgba(255, 255, 255, 0.753); /* Hafif şeffaf beyaz */
   border-radius: 16px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  min-height: calc(100vh - 100px); /* Tüm ekran boyunca uzasın */
+  box-sizing: border-box;
 }
 
-/* Navbar */
+
+/* Genel navbar görünümü */
 .navbar {
-  width: 100%;
-  background-color: #f3ebd0;
-  border-bottom: 1px solid #050303;
-  padding: 12px 0;
+  top:0;
+  width: 100vw;
+  background-color: rgba(239, 237, 237, 0.91);
+  border-bottom: 2px solid #ffffff;
   position: fixed;
-  z-index: 1000;
+
+  
 }
 
-
-.navbar ul {
-  list-style: none;
+/* Menü listesi */
+.menu {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  gap: 25px;
 }
 
-.navbar li {
-  display: inline;
-}
-
-.navbar a {
+.menu li a {
+  display: block;
+  color: rgba(0, 0, 0, 0.529);
+  padding: 14px 20px;
   text-decoration: none;
-  color: #333;
-  font-size: 17px;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar a:hover {
-  color: #a33d0a;
+.menu li a:hover {
+  background-color: #fcfcfc;
+  color: #ff0088;
 }
 
-.sun {
-  color: #f39c12; /* güneş rengi (turuncumsu sarı) */
+
+/* Hamburger simgesi */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: black;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+/* Mobil görünüm */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none; /* Başta gizli */
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li a {
+    width: 100%;
+    border-top: 1px solid #444;
+  }
+
+  .menu-toggle {
+    display: block; /* Hamburger görünsün */
+  }
+
+  .menu.active {
+    display: flex; /* Menü açıldığında göster */
+  }
+}
+
+
+
+.kalp {
+  color: #f408a1; 
   margin-right: 5px;
   font-size: 18px;
 }
