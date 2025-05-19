@@ -16,10 +16,10 @@ body {
 
 .centered-content {
   width: 90%;
-  max-width: 800px;
-  margin: 40px auto; /* Ortalamak için */
+  max-width: 1000px;
+  margin: 30px auto; /* Ortalamak için */
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.753); /* Hafif şeffaf beyaz */
+  background-color: rgba(255, 255, 255, 0.714); /* Hafif şeffaf beyaz */
   border-radius: 16px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   min-height: calc(100vh - 100px); /* Tüm ekran boyunca uzasın */
@@ -106,3 +106,29 @@ body {
   font-size: 18px;
 }
 
+.gokkusagi-yazi {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(270deg, 
+    #ff0000, 
+    #ffa500, 
+    #ffff00, 
+    #008000, 
+    #0000ff, 
+    #4b0082, 
+    #ee82ee, 
+    #ff0000
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbowFlow 5s linear infinite;
+}
+
+@keyframes rainbowFlow {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}

@@ -71,31 +71,3 @@ button[type="submit"]:hover {
     }
 }
 
-/* Hoş geldin mesajı baloncuğu */
-.welcome-bubble {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #ff6f61;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 30px;
-  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.6);
-  font-weight: bold;
-  font-size: 1.1rem;
-  animation: slideInBubble 0.8s ease forwards;
-  cursor: default;
-  user-select: none;
-  z-index: 1000;
-}
-
-@keyframes slideInBubble {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}

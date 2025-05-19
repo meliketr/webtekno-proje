@@ -15,11 +15,11 @@ body {
 }
 
 .centered-content {
-  width: 90%;
-  max-width: 800px;
-  margin: 40px auto; /* Ortalamak için */
+   width: 90%;
+  max-width: 1000px;
+  margin: 30px auto; /* Ortalamak için */
   padding: 40px;
-  background-color: rgba(255, 255, 255, 0.753); /* Hafif şeffaf beyaz */
+  background-color: rgba(255, 255, 255, 0.714); /* Hafif şeffaf beyaz */
   border-radius: 16px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   min-height: calc(100vh - 100px); /* Tüm ekran boyunca uzasın */
