@@ -34,6 +34,7 @@ body {
   background-color: rgba(239, 237, 237, 0.91);
   border-bottom: 2px solid #ffffff;
   position: fixed;
+  z-index: 1000;
 
   
 }
@@ -104,5 +105,177 @@ body {
   color: #f408a1; 
   margin-right: 5px;
   font-size: 18px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+
+
+/* Yeni hali: <a> etiketleri görünür/gizli */
+.slider a {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+
+.slider a.active {
+  opacity: 1;
+  z-index: 1; /* aktif olan önde olsun */
+}
+
+/* Resimleri <a> içinde tam kapsasın */
+.slider a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Butonlar aynı kalabilir */
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2; /* butonlar her zaman üstte */
+  border-radius: 5px;
+}
+
+.slider .prev {
+  left: 20px;
+}
+
+.slider .next {
+  right: 20px;
+}
+
+.bursa-info-section {
+  position: relative;
+  margin: 60px auto;
+  padding: 20px;
+  max-width: 1000px;
+  z-index: 1; /* Navbar'ın altında kalmasın */
+}
+
+.bursa-title {
+  position: absolute;
+  top: -25px;
+  left: 30px;
+  background-color: #f64f2a;
+  color: white;
+  font-size: 1.5rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.bursa-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: block;
+}
+
+.bursa-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.bursa-text {
+  padding: 20px;
+  text-align: left;
+}
+
+.bursa-text h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.bursa-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+.yemek-info-section {
+  position: relative;
+  margin: 60px auto;
+  padding: 20px;
+  max-width: 1000px;
+  z-index: 1;
+}
+
+.yemek-title {
+  position: absolute;
+  top: -25px;
+  left: 30px;
+  background-color: #f64f2a;
+  color: white;
+  font-size: 1.5rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.yemek-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.yemek-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.yemek-item {
+  text-align: center;
+  background-color: #fff9f6;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.yemek-item:hover {
+  transform: translateY(-5px);
+}
+
+.yemek-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.yemek-caption {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1rem;
 }
 

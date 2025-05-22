@@ -106,3 +106,63 @@ body {
   font-size: 18px;
 }
 
+.girisYazisi {
+  color: black;
+  font-size: 40px; /* Yazı boyutunu büyüttük */
+}
+
+.iletisimBilgi {
+  color: #e07658; 
+}
+
+ul.flower-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.flower-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  font-style: italic;
+  color: #5a3e36;
+}
+
+ul.flower-list li::before {
+  content: "❀"; /* Unicode çiçek işareti */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 20px;
+  color: #e9532a;
+  text-shadow: 0 0 3px #d95f3e;
+}
+
+.okul {
+  font-weight: 700;    /* Kalın yazı */
+  color: #000000;      /* İstediğin koyu renk */
+  display: inline;     /* paragrafın satır içi gibi davranması için */
+  margin: 0;           /* p etiketinin default marginlerini sıfırlamak için */
+  padding: 0;
+}
+
+.beceri{
+  font-weight: 700;    /* Kalın yazı */
+  color: #000000;      /* İstediğin koyu renk */
+  display: inline;     /* paragrafın satır içi gibi davranması için */
+  margin: 0;           /* p etiketinin default marginlerini sıfırlamak için */
+  padding: 0;
+}
+
+.ilgi {
+  font-weight: 700;    /* Kalın yazı */
+  color: #000000;      /* İstediğin koyu renk */
+  display: inline;     /* paragrafın satır içi gibi davranması için */
+  margin: 0;           /* p etiketinin default marginlerini sıfırlamak için */
+  padding: 0;
+}
+#isdeneyimi p {
+  font-style: italic; /* paragraf metnini italik yapar */
+}
+
+
