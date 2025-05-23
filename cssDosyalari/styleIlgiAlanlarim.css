@@ -34,6 +34,7 @@ body {
   background-color: rgba(239, 237, 237, 0.91);
   border-bottom: 2px solid #ffffff;
   position: fixed;
+  z-index: 1000;
 
   
 }
@@ -184,4 +185,68 @@ body {
   font-weight: bold;
   color: #333;
   font-size: 1.1rem;
+}
+
+/*---------HAVA DURUMU----------*/
+
+.container {
+justify-content: center;
+}
+
+.row{
+    display: flex;
+}
+
+.card{
+    margin: 25px;
+    width: 125px;
+}
+.weather-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.weather-list ul {
+    padding: 0;
+}
+
+.weather-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.weather-list img {
+    margin-right: 10px;
+    width: 125px;
+    align-items: center;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-info .baslik {
+    font-weight: bold;
+}
+
+.weather-info .aciklama p {
+    margin: 0;
+}
+
+header h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    text-align: center;
+    color: black;
+}
+header p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: black;
+    font-weight: bold;
 }

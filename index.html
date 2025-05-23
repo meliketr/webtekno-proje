@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Sayfası</title>
 
-      <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="cssDosyalari/style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş Sayfası</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="cssDosyalari/style.css">
 
 </head>
+
 <body>
 
 
-<!--Bu HTML kodu, Bootstrap kullanılarak hazırlanmış bir giriş (login) formudur.-->
-    <div class="login-container"> <!-- ana kapsayıcı. Genellikle CSS ile stil vermek için kullanılır.-->
+  <!--Bu HTML kodu, Bootstrap kullanılarak hazırlanmış bir giriş (login) formudur.-->
+  <div class="login-container"> <!-- ana kapsayıcı. Genellikle CSS ile stil vermek için kullanılır.-->
     <h3 class="mb-4 text-center">Giriş Yap</h3> <!--mb-4: Bootstrap'ten gelen, alt boşluk-->
 
     <form id="loginForm" action="login.php" method="POST" novalidate>
 
       <div class="mb-3">
         <label for="username" class="form-label">Kullanıcı Adı (E-posta)</label>
-        <input type="email" class="form-control" id="username" name="username" placeholder="b********@sakarya.edu.tr" required />
+        <input type="email" class="form-control" id="username" name="username" placeholder="b********@sakarya.edu.tr"
+          required />
         <div class="invalid-feedback">Geçerli bir e-posta adresi giriniz.</div>
       </div>
 
@@ -65,4 +68,5 @@
   </script>
 
 </body>
+
 </html>
