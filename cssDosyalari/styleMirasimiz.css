@@ -268,4 +268,70 @@ body {
   text-decoration: none;
   color: inherit; /* Bağlantı yazısının varsayılan rengini korur */
 }
+/*-------------------------------------------------------*/
 
+.youtube-kapsayici {
+  display: flex;
+  gap: 20px; /* Kutular arasında boşluk */
+  justify-content: center; /* Ortaya hizalama */
+  flex-wrap: wrap; /* Ekran daralırsa alt satıra geçmelerini sağlar */
+  margin: 30px 0;
+}
+
+.youtube-kutusu {
+  background-color: #fff0f4;
+  border: 2px solid #fc0000;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 50px 0 0 20px; /* üst boşluk ve soldan uzaklık */
+  max-width: 350px;
+}
+
+.youtube-logo {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.youtube-yazi {
+  color: #fc0000;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+.youtube-yazi:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------*/
+.instagram-kutusu {
+  background-color: #fff0f4;
+  border: 2px solid #7300e6;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin: 50px 0 0 20px; /* üst boşluk ve soldan uzaklık */
+  max-width: 350px;
+}
+
+.instagram-logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.instagram-yazi {
+  color: #7300e6;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+.instagram-yazi:hover {
+  text-decoration: underline;
+}
