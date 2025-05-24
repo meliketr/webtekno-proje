@@ -149,19 +149,33 @@ body {
 
 .suluboya-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Sabit 3 sütun */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Sütun sayısı ekran genişliğine göre otomatik */
   gap: 20px;
+  width: 100%; /* Galeri genişliği %100 olsun */
+  max-width: 1000px; /* Maksimum genişlik senin container genişliğinle uyumlu */
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-
-.suluboya-item {
-  text-align: center;
-  background-color: #fff9f6;
-  border-radius: 16px;
-  padding: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
+.suluboya-item img {
+  width: 100%;      /* Resim kapsayıcının tamamını kaplasın */
+  height: auto;     /* Oran bozulmadan yükseklik ayarlansın */
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;   /* Resim altında boşluk kalmasın */
+  max-height: 300px; /* İstersen yüksekliği sınırla, ama kaldırabilirsin */
 }
+
+/* Küçük ekranlarda 1 sütun yap */
+@media (max-width: 480px) {
+  .suluboya-gallery {
+    grid-template-columns: 1fr;
+  }
+  .suluboya-item img {
+    max-height: none; /* Mobilde yükseklik sınırı kaldır */
+  }
+}
+
 
 .suluboya-item:hover {
   transform: translateY(-5px);
@@ -250,3 +264,4 @@ header p {
     color: black;
     font-weight: bold;
 }
+

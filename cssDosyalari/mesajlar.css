@@ -1,0 +1,106 @@
+body {
+    background: linear-gradient(135deg, #f8b9e3 0%, #e07658 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh; /* sayfa boyu kadar uzasın */
+    background-attachment: fixed; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px; /*NAVBAR YÜKSEKLİĞİ KADAR BOŞLUK */
+
+
+}
+
+.centered-content {
+   width: 90%;
+  max-width: 1000px;
+  margin: 30px auto; /* Ortalamak için */
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.714); /* Hafif şeffaf beyaz */
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  min-height: calc(100vh - 100px); /* Tüm ekran boyunca uzasın */
+  box-sizing: border-box;
+}
+
+/* Genel navbar görünümü */
+.navbar {
+  top:0;
+  width: 100vw;
+  background-color: rgba(239, 237, 237, 0.91);
+  border-bottom: 2px solid #ffffff;
+  position: fixed;
+
+  
+}
+
+/* Menü listesi */
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  display: block;
+  color: rgba(0, 0, 0, 0.529);
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #fcfcfc;
+  color: #ff0088;
+}
+
+
+/* Hamburger simgesi */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: black;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+/* Mobil görünüm */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none; /* Başta gizli */
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li a {
+    width: 100%;
+    border-top: 1px solid #444;
+  }
+
+  .menu-toggle {
+    display: block; /* Hamburger görünsün */
+  }
+
+  .menu.active {
+    display: flex; /* Menü açıldığında göster */
+  }
+}
+
+
+
+.kalp {
+  color: #f408a1; 
+  margin-right: 5px;
+  font-size: 18px;
+}

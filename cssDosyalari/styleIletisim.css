@@ -1,0 +1,131 @@
+    body {
+      background: linear-gradient(135deg, #f8b9e3 0%, #e07658 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 60px;
+      min-height: 100vh;
+    }
+
+    .centered-content {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.842);
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      min-height: calc(100vh - 100px);
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      top: 0;
+      width: 100vw;
+      background-color: rgba(239, 237, 237, 0.91);
+      border-bottom: 2px solid #ffffff;
+      position: fixed;
+      z-index: 999;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: flex-start;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li a {
+      display: block;
+      color: rgba(0, 0, 0, 0.7);
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .menu li a:hover {
+      background-color: #fcfcfc;
+      color: #ff0088;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: black;
+      padding: 14px 20px;
+      cursor: pointer;
+    }
+
+    .kalp {
+      color: #f408a1;
+      margin-right: 5px;
+      font-size: 18px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        display: none;
+        width: 100%;
+      }
+
+      .menu li {
+        width: 100%;
+      }
+
+      .menu li a {
+        width: 100%;
+        border-top: 1px solid #444;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+    }

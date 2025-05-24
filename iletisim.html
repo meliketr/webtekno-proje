@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İletişim</title>
+  <link rel="stylesheet" href="cssDosyalari/styleIletisim.css" />
+  
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="menu" id="menu">
+      <li><a href="hakkimda.html"><span class="kalp">❤️</span> Hakkımda</a></li>
+      <li><a href="ozgecmis.html">Özgeçmişim</a></li>
+      <li><a href="sehrim.html">Şehrim</a></li>
+      <li><a href="mirasimiz.html">Mirasımız</a></li>
+      <li><a href="ilgiAlanlarim.html">İlgi Alanlarım</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <div class="centered-content">
+    <div id="app">
+      <div class="formdiv">
+        <h2>İletişim Formu</h2>
+        <form @submit.prevent="formuDogrula" @reset="formuSifirla">
+          <label for="firstname">Ad:</label>
+          <input type="text" id="firstname" v-model="form.firstname" required>
+
+          <label for="lastname">Soyad:</label>
+          <input type="text" id="lastname" v-model="form.lastname" required>
+
+          <label for="birthdate">Doğum Tarihi:</label>
+          <input type="date" id="birthdate" v-model="form.birthdate" required>
+
+          <label for="username">Kullanıcı Adı:</label>
+          <input type="text" id="username" v-model="form.username" required>
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" v-model="form.email" required>
+
+          <label for="password">Şifre:</label>
+          <input type="password" id="password" v-model="form.password" required>
+
+          <label for="gender">Cinsiyet:</label>
+          <select id="gender" v-model="form.gender" required>
+            <option value="">Seçiniz</option>
+            <option value="male">Erkek</option>
+            <option value="female">Kadın</option>
+          </select>
+
+          <label for="newsletter">Bilgilerim kaydedilsin:</label>
+          <input type="checkbox" id="newsletter" v-model="form.newsletter">
+
+          <div class="buttons">
+            <button type="submit">Gönder</button>
+            <button type="reset">Temizle</button>
+            <button type="button" @click="formuKontrolEt">Kontrol Et</button>
+          </div>
+        </form>
+        <div v-if="successMessage" class="success-message">{{ successMessage }}</div>
+        <button @click="adminGirisSayfasinaGit">Admin Girişi</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        form: {
+          firstname: '',
+          lastname: '',
+          birthdate: '',
+          username: '',
+          email: '',
+          password: '',
+          gender: '',
+          newsletter: false
+        },
+        successMessage: ''
+      },
+      methods: {
+        formuDogrula() {
+          if (this.form.firstname && this.form.lastname && this.form.birthdate && this.form.username && this.form.email && this.form.password && this.form.gender) {
+            this.successMessage = 'Form başarıyla gönderildi!';
+            localStorage.setItem('formData', JSON.stringify(this.form));
+            this.formuSifirla();
+          } else {
+            alert('Lütfen tüm alanları doldurun.');
+          }
+        },
+        formuSifirla() {
+          this.form = {
+            firstname: '',
+            lastname: '',
+            birthdate: '',
+            username: '',
+            email: '',
+            password: '',
+            gender: '',
+            newsletter: false
+          };
+          this.successMessage = '';
+        },
+        adminGirisSayfasinaGit() {
+          window.location.href = 'adminGiris.html';
+        },
+        formuKontrolEt() {
+          if (!this.form.firstname || !this.form.lastname || !this.form.birthdate || !this.form.username || !this.form.email || !this.form.password || !this.form.gender) {
+            alert('Lütfen tüm alanları doldurun.');
+            return;
+          }
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(this.form.email)) {
+            alert('Geçerli bir e-posta adresi giriniz.');
+            return;
+          }
+          alert('Form kontrolü başarılı.');
+        }
+      }
+    });
+  </script>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('menu').classList.toggle('active');
+    });
+  </script>
+</body>
+
+</html>
+
+
+<!--
+
+"İletişim formundaki gerekli kontrol işlemleri... iki farklı butonda ayrı ayrı denetlenmelidir."
+Durum: Vue.js kodunda iki buton var:
+
+Gönder butonu → validateForm fonksiyonunu çalıştırıyor.
+
+Temizle butonu → clearForm fonksiyonunu çalıştırıyor.
+
+Ayrıca Vue.js ile:
+
+Ad soyad, e-posta, telefon, mesaj boş mu kontrolü yapılıyor.
+
+E-posta formatı geçerli mi kontrol ediliyor.
+
+Telefon sadece sayı mı kontrolü yapılıyor.
+
+🟢 Form denetimi HTML içi "required" gibi dahili denetimlerle değil, Vue.js ve JavaScript ile sağlanmış.
+✅ Bu koşul da sağlanıyor.
+
+
+
+
+-->

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Özgeçmişim</title>
+  <link rel="stylesheet" href="cssDosyalari/styleOzgecmis.css">
+
+
+
+</head>
+
+<body>
+  <div>
+    <!-- Navbar -->
+    <nav class="navbar">
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="menu" id="menu">
+      <li><a href="hakkimda.html"><span class="kalp">❤️</span> Hakkımda</a></li>
+      <li><a href="ozgecmis.html">Özgeçmişim</a></li>
+      <li><a href="sehrim.html">Şehrim</a></li>
+      <li><a href="mirasimiz.html">Mirasımız</a></li>
+      <li><a href="ilgiAlanlarim.html">İlgi Alanlarım</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </nav>
+
+  </div>
+
+
+  <div class="centered-content">
+    <h2 style="text-align: center;">Gelen Mesajlar</h2>
+    <div id="results"></div>
+    
+<script>
+        // Sayfa yüklendiğinde çalışacak fonksiyon
+        window.onload = function() {
+            const formData = JSON.parse(localStorage.getItem('formData')); // localStorage'dan form verilerini alır
+            const resultsDiv = document.getElementById('results'); // Sonuçları gösterecek div
+
+            if (formData) {
+                // Form verilerini Türkçe olarak isimlendir
+                const fieldNames = {
+                    firstname: 'Ad',
+                    lastname: 'Soyad',
+                    birthdate: 'Doğum Tarihi',
+                    username: 'Kullanıcı Adı',
+                    email: 'E-posta',
+                    password: 'Şifre',
+                    gender: 'Cinsiyet',
+                    newsletter: 'Bilgilerim kaydedilsin'
+                };
+
+                // Her bir form verisini sayfaya ekler
+                for (const [key, value] of Object.entries(formData)) {
+                    const p = document.createElement('p'); // Yeni bir p elementi oluşturur
+                    p.textContent = `${fieldNames[key] || key}: ${value}`; // p elementinin içeriğini ayarlar
+                    resultsDiv.appendChild(p); // p elementini sonuçlar div'ine ekler
+                }
+            } else {
+                resultsDiv.textContent = 'Gösterilecek veri yok.';
+            }
+        }
+    </script>
+
+
+
+  </div>
+
+
+</body>
+
+</html>
+
+
+<!--menünün açılıp kapanmasını sağlar-->
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+  });
+</script>

@@ -1,0 +1,144 @@
+/* Navbar */
+.navbar {
+  top: 0;
+  width: 100vw;
+  background-color: rgba(239, 237, 237, 0.91);
+  border-bottom: 2px solid #ffffff;
+  position: fixed;
+  z-index: 1000;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  display: block;
+  color: rgba(0, 0, 0, 0.529);
+  padding: 14px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #fcfcfc;
+  color: #ff0088;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: black;
+  padding: 14px 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu li a {
+    width: 100%;
+    border-top: 1px solid #444;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu.active {
+    display: flex;
+  }
+}
+
+.kalp {
+  color: #f408a1;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+/* Sayfa */
+body {
+  background: linear-gradient(135deg, #f8b9e3 0%, #e07658 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Giriş Kutusu */
+.login-container {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  margin-top: 80px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.login-container h3 {
+  font-weight: bold;
+  color: #ff6f61;
+}
+
+/* Input */
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #ffd6c0;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: #ff6f61;
+  box-shadow: none;
+}
+
+/* Buton */
+button[type="submit"] {
+  background-color: #ff6f61;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #e0554f;
+}
+
+/* Hatalı giriş */
+.invalid-feedback {
+  font-size: 0.85rem;
+  color: #d9534f;
+}
+
+/* Animasyon */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
